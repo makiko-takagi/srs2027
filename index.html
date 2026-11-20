@@ -18,7 +18,7 @@
 <meta property="og:locale:alternate" content="ja_JP">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -26,8 +26,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="#top">
-      <!-- 主催校ロゴ：画像ができたら各 span を <img class="logo" src="assets/logo-cttc.png" alt="Cao Thang Technical College"> のように差し替え -->
-      <span class="logo-slot">CTTC</span><span class="logo-slot">NIT<br>Ariake</span>
+      <img class="logo-srs" src="assets/logo-srs-128.png" alt="SRS logo" width="40" height="40">
       <span class="brand-text"><span class="brand-mark">SRS</span><span class="brand-year">2027</span></span>
     </a>
     <div class="header-right">
@@ -53,11 +52,12 @@
 
   <section class="hero">
     <div class="hero-city" aria-hidden="true"></div>
-    <div class="wrap">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
       <p class="eyebrow" data-i18n="hero.eyebrow"></p>
       <h1 id="ev-name"></h1>
       <p class="hero-meta"><span id="ev-date"></span><span class="sep" aria-hidden="true">|</span><span id="ev-venue"></span></p>
-      <p class="hero-org" id="ev-org"></p>
+      <p class="hero-org"><span class="org-logos"><img src="assets/logo-cttc.png" alt="" height="34"><img src="assets/logo-nit.png" alt="" height="30"></span><span id="ev-org"></span></p>
       <p class="countdown" id="countdown"></p>
       <div class="cta">
         <a class="btn" href="#program" data-i18n="hero.ctaProgram"></a>
@@ -65,6 +65,9 @@
         <a class="btn ghost" href="#guidelines" data-i18n="hero.ctaGuide"></a>
         <a class="btn ghost" href="#companies" data-i18n="hero.ctaCompanies"></a>
       </div>
+      </div>
+      <!-- 大会ロゴ（仮置き）：差し替えは assets/logo-srs.png を同名で置き換え -->
+      <img class="hero-logo" src="assets/logo-srs.png" alt="Student Research Symposium logo" width="480" height="480">
     </div>
   </section>
 
@@ -228,6 +231,11 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
+      <div class="ft-logos">
+        <img src="assets/logo-srs-128.png" alt="SRS logo" height="48">
+        <img src="assets/logo-cttc.png" alt="Cao Thang Technical College" height="48">
+        <img src="assets/logo-nit.png" alt="National Institute of Technology (KOSEN)" height="48">
+      </div>
       <p class="ft-brand">SRS 2027</p>
       <p id="ft-sec"></p>
       <p id="ft-addr" class="muted"></p>

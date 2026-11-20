@@ -1,15 +1,19 @@
 /* SRS 2027 Online Proceedings — style
    色は :root の変数だけ変えれば全体に反映されます */
 :root{
-  --ink:#1d2433;
-  --muted:#5f6878;
-  --line:#dde1e7;
+  /* カオタンの青を基調にした配色 */
+  --ink:#141a3c;
+  --muted:#5a6185;
+  --line:#dde2f3;
   --bg:#ffffff;
-  --bg-alt:#f5f6f8;
-  --accent:#1f4e79;      /* メインカラー（ロゴに合わせて変更） */
-  --accent-2:#c8102e;    /* 差し色 */
-  --radius:6px;
-  --header-h:56px;
+  --bg-alt:#f2f5fe;
+  --accent:#1736e6;      /* メイン：カオタンの青（画面用に少しだけ落とした値） */
+  --accent-dark:#0b1f9e; /* 濃い青：見出し・フッター */
+  --accent-soft:#e8edff; /* 薄い青：背景 */
+  --accent-2:#e3262f;    /* 差し色：トーチの赤 */
+  --accent-3:#2f8a5c;    /* 補助：大会ロゴの緑 */
+  --radius:8px;
+  --header-h:60px;
   --font:"Inter","Helvetica Neue",Arial,"Noto Sans",sans-serif;
   --font-ja:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
 }
@@ -29,8 +33,9 @@ img{max-width:100%;height:auto}
 .brand{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink);font-weight:700;letter-spacing:.04em;white-space:nowrap}
 .logo-slot{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px dashed var(--line);border-radius:50%;font-size:.55rem;line-height:1.1;text-align:center;color:var(--muted);font-weight:600;letter-spacing:0}
 .logo{height:38px;width:auto}
+.logo-srs{width:40px;height:40px;display:block}
 .brand-text{margin-left:6px}
-.brand-mark{color:var(--accent)}
+.brand-mark{color:var(--accent-dark)}
 .brand-year{margin-left:.3em;color:var(--muted);font-weight:500}
 .header-right{display:flex;align-items:center;gap:16px}
 .nav{display:flex;gap:16px}
@@ -52,8 +57,14 @@ img{max-width:100%;height:auto}
 .menu-btn[aria-expanded="true"] .bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding:clamp(36px,8vw,72px) 0 clamp(120px,19vw,215px);border-bottom:4px solid var(--accent)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--accent-soft) 0%,#fff 65%);padding:clamp(36px,8vw,72px) 0 clamp(120px,19vw,215px);border-bottom:4px solid var(--accent)}
 .hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center}
+.hero-logo{width:clamp(180px,24vw,300px);height:auto;filter:drop-shadow(0 6px 18px rgba(11,31,158,.15))}
+.hero h1{color:var(--accent-dark)}
+.org-logos{display:inline-flex;gap:8px;align-items:center;margin-right:10px;vertical-align:middle}
+.org-logos img{display:block;width:auto;height:34px}
+.hero-org{display:flex;align-items:center;flex-wrap:wrap;gap:4px}
 .hero-city{position:absolute;left:0;right:0;bottom:0;height:clamp(90px,16vw,190px);background:url(cityscape.svg) center bottom / cover no-repeat;pointer-events:none}
 .eyebrow{margin:0;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--accent-2);font-weight:600}
 .hero h1{margin:.25em 0 .35em;font-size:clamp(1.5rem,4.5vw,2.3rem);line-height:1.3}
@@ -64,7 +75,8 @@ img{max-width:100%;height:auto}
 /* ---------- blocks ---------- */
 .block{padding:clamp(32px,6vw,52px) 0}
 .block.alt{background:var(--bg-alt)}
-h2{font-size:clamp(1.25rem,3vw,1.5rem);margin:0 0 20px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h2{position:relative;font-size:clamp(1.25rem,3vw,1.5rem);margin:0 0 20px;padding-bottom:10px;border-bottom:1px solid var(--line);color:var(--accent-dark)}
+h2::after{content:"";position:absolute;left:0;bottom:-2px;width:56px;height:3px;background:var(--accent);border-radius:2px}
 h3{font-size:1.05rem;margin:24px 0 8px}
 .lead{margin-top:-8px;color:var(--muted)}
 .muted{color:var(--muted)}
@@ -85,7 +97,7 @@ th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);verti
 th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
 .prog td.time{white-space:nowrap;width:120px;font-variant-numeric:tabular-nums}
 .prog tr.break td{color:var(--muted);background:var(--bg-alt)}
-.prog .stitle{font-weight:600}
+.prog .stitle{font-weight:700;color:var(--accent-dark)}
 .tag{display:inline-block;font-size:.72rem;padding:1px 6px;border-radius:3px;border:1px solid var(--line);color:var(--muted);margin-left:6px;vertical-align:1px;white-space:nowrap}
 .slots{list-style:none;margin:8px 0 0;padding:0}
 .slots li{display:grid;grid-template-columns:48px 56px 1fr;gap:6px;padding:6px 0;border-top:1px dotted var(--line);font-size:.88rem}
@@ -119,13 +131,17 @@ th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mu
 
 .award-item{padding:10px 0;border-bottom:1px solid var(--line)}
 .award-name{font-weight:600;color:var(--accent-2)}
-.site-footer{border-top:1px solid var(--line);padding:24px 0;font-size:.85rem}
+.site-footer{background:var(--accent-dark);color:#e6eaff;padding:32px 0;font-size:.85rem}
+.site-footer .muted{color:#b9c2f5}
+.site-footer a{color:#fff}
+.ft-logos{display:inline-flex;gap:12px;align-items:center;background:#fff;border-radius:999px;padding:6px 16px;margin-bottom:12px}
+.ft-logos img{height:40px;width:auto}
 
 a.plain{color:inherit;text-decoration:none}
 a.plain:hover{color:var(--accent);text-decoration:underline}
 a.ptitle{color:var(--ink);text-decoration:none}
 a.ptitle:hover{color:var(--accent);text-decoration:underline}
-.prog tr.tour td{background:#fbf3f4}
+.prog tr.tour td{background:#fff1f2}
 td.deadline{font-weight:600;color:var(--accent-2)}
 .small{font-size:.85rem}
 
@@ -149,7 +165,7 @@ td.deadline{font-weight:600;color:var(--accent-2)}
 .tl-date{font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
 
 /* ---------- companies ---------- */
-.companies{background:linear-gradient(180deg,#f0f4f9,#fff)}
+.companies{background:linear-gradient(180deg,var(--accent-soft),#fff)}
 .co-lead{max-width:780px;font-size:1.05rem;margin:0 0 24px}
 .co-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .co-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--radius);padding:18px 20px}
@@ -171,7 +187,7 @@ td.deadline{font-weight:600;color:var(--accent-2)}
 .partners{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
 .partners img{height:48px;width:auto}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.ft-brand{font-weight:700;color:var(--accent);margin:0 0 4px}
+.ft-brand{font-weight:700;color:#fff;margin:0 0 4px}
 .site-footer p{margin:0 0 6px}
 
 /* ---------- abstract page ---------- */
@@ -239,6 +255,8 @@ html:lang(ja) .abs-full{text-align:left}
   .pager{grid-template-columns:1fr}
   .pg-next{text-align:left}
   .pdf-frame.a4,.pdf-frame.poster{max-height:70vh}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-logo{order:-1;width:140px;justify-self:start}
   .hero-meta .sep{display:none}
   .hero-meta span{display:block}
   .facts{grid-template-columns:1fr;gap:0}

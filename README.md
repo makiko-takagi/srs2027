@@ -54,10 +54,12 @@ SRSについて → 重要日程（過去の日付は自動で薄く表示）→
 - 写真（`gallery`）と協賛・協力（`partners`）は、データが空のあいだは表示されません
 - ヒーローのカウントダウンは `event.startDate` から自動計算です
 
-## ロゴと街並みイラスト
+## ロゴ・配色
 
-- ヘッダーの丸い点線枠2つが主催校ロゴの仮置きです。`index.html` と `paper.html` の `<span class="logo-slot">` を `<img class="logo" src="assets/logo-cttc.png" alt="Cao Thang Technical College">` のように差し替えます
-- トップの街並みは `assets/cityscape.svg` を同名で置き換えれば反映されます（横長、下端揃えで表示）
+- `assets/logo-srs.png`（大会ロゴ・仮置き）、`assets/logo-srs-128.png`（ヘッダー・フッター用の小さい版）、`assets/logo-cttc.png`、`assets/logo-nit.png`
+- 大会ロゴが確定したら、同じファイル名で置き換えれば全ページに反映されます（`favicon.png` と共有用の `og-image.png` は別途作り直し）
+- 配色は `assets/style.css` 冒頭の `:root` で管理しています。メインはカオタンの青（`--accent`）、差し色はトーチの赤（`--accent-2`）
+- トップの街並みは `assets/cityscape.svg` を同名で置き換えれば反映されます
 
 ## 多言語対応（英・日・越）
 

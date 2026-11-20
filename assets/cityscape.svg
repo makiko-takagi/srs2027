@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice">
   <!-- 仮の街並みイラスト。完成版のイラストができたらこのファイルを差し替えてください -->
-  <g fill="#1f4e79">
+  <g fill="#1736e6">
     <g opacity=".10">
       <rect x="40" y="70" width="70" height="150"/><rect x="130" y="40" width="50" height="180"/>
       <rect x="300" y="90" width="90" height="130"/><rect x="560" y="20" width="44" height="200"/>

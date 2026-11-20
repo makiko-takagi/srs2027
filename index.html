@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRS 2027 — Student Research Symposium, Ho Chi Minh City</title>
+<meta name="description" content="Student Research Symposium 2027 (SRS 2027), 10 December 2027, Cao Thang Technical College, Ho Chi Minh City. Students of Cao Thang Technical College and Japanese KOSEN present their research in English.">
+<!-- 共有時のプレビュー（OGP）。公開URLが決まったら USERNAME の部分を書き換えてください -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SRS 2027">
+<meta property="og:title" content="SRS 2027 — Student Research Symposium | 10 Dec 2027, Ho Chi Minh City">
+<meta property="og:description" content="Students of Cao Thang Technical College and Japanese KOSEN present their research in English. カオタン技術短期大学と日本の高専の学生による研究発表会。">
+<meta property="og:url" content="https://makiko-takagi.github.io/srs2027/">
+<meta property="og:image" content="https://makiko-takagi.github.io/srs2027/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <!-- 主催校ロゴ：画像ができたら各 span を <img class="logo" src="assets/logo-cttc.png" alt="Cao Thang Technical College"> のように差し替え -->
+      <span class="logo-slot">CTTC</span><span class="logo-slot">NIT<br>Ariake</span>
+      <span class="brand-text"><span class="brand-mark">SRS</span><span class="brand-year">2027</span></span>
+    </a>
+    <div class="header-right">
+      <nav class="nav" id="nav">
+        <a href="#about" data-i18n="nav.about"></a>
+        <a href="#dates" data-i18n="nav.dates"></a>
+        <a href="#program" data-i18n="nav.program"></a>
+        <a href="#proceedings" data-i18n="nav.proceedings"></a>
+        <a href="#guidelines" data-i18n="nav.guidelines"></a>
+        <a href="#access" data-i18n="nav.access"></a>
+        <a href="#companies" data-i18n="nav.companies" class="nav-em"></a>
+      </nav>
+      <div class="lang" id="lang-switch" role="group" aria-label="Language"></div>
+      <button class="menu-btn" id="menu-btn" aria-controls="nav" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        <span class="sr" data-i18n="nav.menu"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-city" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+      <h1 id="ev-name"></h1>
+      <p class="hero-meta"><span id="ev-date"></span><span class="sep" aria-hidden="true">|</span><span id="ev-venue"></span></p>
+      <p class="hero-org" id="ev-org"></p>
+      <p class="countdown" id="countdown"></p>
+      <div class="cta">
+        <a class="btn" href="#program" data-i18n="hero.ctaProgram"></a>
+        <a class="btn" href="#proceedings" data-i18n="hero.ctaProc"></a>
+        <a class="btn ghost" href="#guidelines" data-i18n="hero.ctaGuide"></a>
+        <a class="btn ghost" href="#companies" data-i18n="hero.ctaCompanies"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="block">
+    <div class="wrap">
+      <h2 data-i18n="ab.title"></h2>
+      <p class="about-text" id="about-text"></p>
+      <dl class="facts">
+        <dt data-i18n="ov.symposium"></dt><dd id="f-date"></dd>
+        <dt data-i18n="ov.tour"></dt><dd id="f-tour"></dd>
+        <dt data-i18n="ov.venue"></dt><dd id="f-venue"></dd>
+        <dt data-i18n="ov.format"></dt><dd data-i18n="ov.formatText"></dd>
+        <dt data-i18n="ov.presentations"></dt><dd id="f-count"></dd>
+        <dt data-i18n="ov.keynote"></dt><dd id="f-keynote"></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="dates" class="block alt">
+    <div class="wrap">
+      <h2 data-i18n="dt.title"></h2>
+      <ol class="timeline" id="date-list"></ol>
+      <p class="note" data-i18n="dt.note"></p>
+    </div>
+  </section>
+
+  <section id="program" class="block">
+    <div class="wrap">
+      <h2 data-i18n="pg.title"></h2>
+      <p class="lead" id="pg-date"></p>
+      <div id="program-table"></div>
+    </div>
+  </section>
+
+  <section id="proceedings" class="block alt">
+    <div class="wrap">
+      <h2 data-i18n="pr.title"></h2>
+      <div class="filters">
+        <input id="q" type="search" data-i18n-ph="pr.search" aria-label="Search">
+        <select id="f-session" aria-label="Session"></select>
+        <select id="f-inst" aria-label="Institution"></select>
+      </div>
+      <p class="count" id="result-count"></p>
+      <ol class="papers" id="paper-list"></ol>
+    </div>
+  </section>
+
+  <section id="guidelines" class="block">
+    <div class="wrap">
+      <h2 data-i18n="gl.title"></h2>
+      <div class="cols">
+        <div>
+          <h3 data-i18n="gl.oral"></h3>
+          <ul>
+            <li data-i18n-html="gl.oral1"></li>
+            <li data-i18n-html="gl.oral2"></li>
+            <li data-i18n-html="gl.oral3"></li>
+            <li data-i18n-html="gl.oral4"></li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="gl.poster"></h3>
+          <ul>
+            <li data-i18n-html="gl.poster1"></li>
+            <li data-i18n-html="gl.poster2"></li>
+            <li data-i18n-html="gl.poster3"></li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="gl.proc"></h3>
+          <ul>
+            <li data-i18n-html="gl.proc1"></li>
+          </ul>
+        </div>
+      </div>
+      <h3 data-i18n="gl.sub"></h3>
+      <table class="simple stack">
+        <thead><tr><th data-i18n="gl.item"></th><th data-i18n="gl.format"></th><th data-i18n="gl.deadline"></th></tr></thead>
+        <tbody id="sub-rows"></tbody>
+      </table>
+      <p class="note" data-i18n-html="gl.naming"></p>
+    </div>
+  </section>
+
+  <section id="companies" class="block companies">
+    <div class="wrap">
+      <h2 data-i18n="co.title"></h2>
+      <p class="co-lead" id="co-lead"></p>
+      <div class="co-grid">
+        <div class="co-card">
+          <h3 data-i18n="co.why"></h3>
+          <ul id="co-why"></ul>
+        </div>
+        <div class="co-card">
+          <h3 data-i18n="co.ways"></h3>
+          <ul id="co-ways"></ul>
+          <p class="note" id="co-ways-note"></p>
+        </div>
+      </div>
+      <div class="co-actions">
+        <a class="btn" id="co-mail" data-i18n="co.contact"></a>
+      </div>
+      <div class="share">
+        <span class="share-label" data-i18n="co.share"></span>
+        <div class="share-btns" id="share-btns"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="access" class="block alt">
+    <div class="wrap">
+      <h2 data-i18n="ac.title"></h2>
+      <div class="access">
+        <div>
+          <p class="venue-name" id="ac-venue"></p>
+          <p id="ac-info"></p>
+          <dl class="facts small-facts">
+            <dt data-i18n="ac.address"></dt><dd id="ac-address"></dd>
+          </dl>
+          <p><a class="btn small" id="ac-map" target="_blank" rel="noopener" data-i18n="ac.map"></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tour" class="block">
+    <div class="wrap">
+      <h2 data-i18n="ct.title"></h2>
+      <p class="lead" id="ct-date"></p>
+      <div id="ct-body"></div>
+    </div>
+  </section>
+
+  <section id="awards" class="block alt">
+    <div class="wrap">
+      <h2 data-i18n="aw.title"></h2>
+      <div id="award-list"></div>
+    </div>
+  </section>
+
+  <section id="gallery" class="block" hidden>
+    <div class="wrap">
+      <h2 data-i18n="ga.title"></h2>
+      <div class="gallery" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <section id="organization" class="block">
+    <div class="wrap">
+      <h2 data-i18n="or.title"></h2>
+      <dl class="facts" id="org-list"></dl>
+      <div id="partners-wrap" hidden>
+        <h3 data-i18n="pt.title"></h3>
+        <div class="partners" id="partners"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="ft-brand">SRS 2027</p>
+      <p id="ft-sec"></p>
+      <p id="ft-addr" class="muted"></p>
+    </div>
+    <div>
+      <p id="ft-cite"></p>
+      <p id="ft-meta" class="muted"></p>
+    </div>
+  </div>
+</footer>
+
+<script src="data/srs-data.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

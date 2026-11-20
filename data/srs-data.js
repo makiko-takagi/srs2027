@@ -47,9 +47,9 @@ window.SRS = {
     cityEn: "Ho Chi Minh City, Vietnam",
     organizers: ["CT", "AR"],   // institutions のコード
     keynote: {
-      en: "Mitsuba Vietnam",
-      ja: "ミツバ・ベトナム（Mitsuba Vietnam）",
-      vi: "Mitsuba Việt Nam"
+      en: "To be announced",
+      ja: "調整中",
+      vi: "Sẽ thông báo sau"
     },
     url: "https://makiko-takagi.github.io/srs2027/",   // 公開URL（共有リンク・OGP用）
     startDate: "2027-12-10",                       // カウントダウン用
@@ -118,7 +118,7 @@ window.SRS = {
 
   /* 協賛・協力（ロゴ画像を置いたら追記） */
   partners: [
-    // { name: "Mitsuba Vietnam", logo: "assets/partners/mitsuba.png", url: "https://..." },
+    // { name: "Company name", logo: "assets/partners/company.png", url: "https://..." },
   ],
 
   /* 写真（過去のSRSの写真などを置いたら追記。空ならセクションごと非表示） */
@@ -153,7 +153,7 @@ window.SRS = {
       note:  { en: "Welcome addresses; briefing", ja: "両校挨拶・進行説明", vi: "Phát biểu chào mừng; phổ biến chương trình" } },
     { start: "8:45",  end: "9:00",  type: "talk",
       title: { en: "Keynote Lecture", ja: "基調講演", vi: "Bài phát biểu chính" },
-      note:  { en: "Mitsuba Vietnam", ja: "ミツバ・ベトナム", vi: "Mitsuba Việt Nam" } },
+      note:  { en: "Speaker to be announced", ja: "講演者は調整中", vi: "Diễn giả sẽ được thông báo sau" } },
     { start: "9:00",  end: "10:05", type: "session", session: "S1" },
     { start: "10:05", end: "10:20", type: "break",
       title: { en: "Break", ja: "休憩", vi: "Giải lao" } },
